@@ -14,6 +14,8 @@ class MovieController extends Controller
      */
     public function index()
     {
+        $movies= Movie :: all();
+        return view('Movie.index',compact('movies'));
         // return view('Movie.index');
 
     }
@@ -42,7 +44,8 @@ class MovieController extends Controller
         $movie->movie_description=$request->movie_description;
         $movie->movie_generation=$request->movie_generation;
         $movie->save();
-        return response('Data added successfully !');
+        return redirect()->route('Movie.index');
+        // return response('Data added successfully !');
     }
 
     /**
@@ -51,9 +54,9 @@ class MovieController extends Controller
      * @param  \App\Models\Movie  $movie
      * @return \Illuminate\Http\Response
      */
-    public function show(Movie $movie)
+    public function show($id)
     {
-        $movie= Movie:: all();
+        $movie= Movie:: findOrFail($id);
         return view('Movie.index',compact('movie'));
         // return response('Data added successfully !');
     }
@@ -79,7 +82,7 @@ class MovieController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $movie= Movie :: findOrFail($id);;
+        $movie= Movie :: findOrFail($id);
         $movie->movie_name=$request->movie_name;
         $movie->movie_description=$request->movie_description;
         $movie->movie_generation=$request->movie_generation;

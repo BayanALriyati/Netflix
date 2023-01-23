@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\WorkController;
 use App\Http\Controllers\MovieController;
+// use App\Http\Controllers\uploudImage;
+use App\Http\Controllers\uploudImage;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,5 +25,8 @@ Route::resource('posts',WorkController::class);
 
 Route::resource('Movie',MovieController::class);
 
+Route::get('Show',[uploudImage::class , "showForm"]);
+
+Route::post('store',[uploudImage::class , "store"])->name('photo.save');
 
 

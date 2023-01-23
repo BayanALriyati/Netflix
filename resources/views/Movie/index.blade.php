@@ -15,7 +15,7 @@
         <th>Movie Generation</th>
         <th>Action</th>
       </thead>
-      @foreach ($movie as $item)
+      @foreach ($movies as $item)
       <tbody> 
         <td>{{$item->movie_name}}</td>
         <td>{{$item->movie_description}}</td>

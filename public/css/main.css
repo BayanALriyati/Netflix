@@ -1,0 +1,15 @@
+body{
+    background-color:antiquewhite;
+    font: 2em sans-serif;
+}
+
+form {
+    display: grid;
+    /* border: 0.2rem solid blue; */
+    margin: 5rem auto;
+    justify-items: stretch;
+    justify-content: center;
+    align-items: end;
+    /* width: fit-content; */
+
+}

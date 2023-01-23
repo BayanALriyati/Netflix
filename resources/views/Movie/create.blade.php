@@ -10,7 +10,7 @@
     {{-- dd("hello") --}}
 
     <h1>Create table the movies</h1>
-    <form action="{{route('Movie.store')}}" method="POST">
+    <form action="{{route('Movie.index')}}" method="POST">
         @csrf
 <input type="text" name="movie_name" placeholder="Enter Name Movie"><br><br>
 <input type="text" name="movie_description" placeholder="Enter Description"><br><br>
