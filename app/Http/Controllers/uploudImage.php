@@ -12,7 +12,7 @@ class uploudImage extends Controller
 
     public function store(Request $request){
         $image = $request->file("photo")->getClientOriginalName();
-        $path = $request->file("photo")->storeAs('public/Image',$image);
+        $path = $request->file("photo")->storeAs('Movie',$image ,'photo');
 
         return $path;
      }
